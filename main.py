@@ -1,4 +1,3 @@
-from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -23,7 +22,7 @@ class LoginData(BaseModel):
 # Home
 @app.get("/")
 def home():
-    return {"message": "iGOT Karmayogi backend is running successfully!"}
+    return FileResponse("index.html")
 
 
 # Test
